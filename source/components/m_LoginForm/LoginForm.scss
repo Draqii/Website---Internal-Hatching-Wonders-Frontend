@@ -1,0 +1,16 @@
+@import "../../styles/branding.scss";
+
+.ihw_loginform {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__textboxes {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+}

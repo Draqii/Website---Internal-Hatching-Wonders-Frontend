@@ -1,0 +1,19 @@
+@import "../../styles/colors.scss";
+@import "../../styles/text.scss";
+
+.ihw_list {
+    font-family: "Darumadrop";
+    padding: 0 0 0 40px;
+    margin: 0;
+
+    .ihw_list__item {
+        @include text-medium();
+    }
+
+    &--light .ihw_list__item {
+        color: $light_contrast;
+    }
+    &--dark .ihw_list__item {
+        color: $dark_contrast;
+    }
+}

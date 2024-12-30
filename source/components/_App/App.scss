@@ -1,0 +1,98 @@
+@import "../../styles/colors.scss";
+@import "../../styles/branding.scss";
+
+.hw_page {
+    position: relative;
+    width: calc(100%);
+
+    &--light {
+        background-color: $background_light;
+    }
+    &--dark {
+        background-color: $background_dark;
+    }
+
+    .hw_heading {
+        &--dark {
+            color: $color-primary-light;
+        }
+    }
+    
+    .hw_paragraph {
+        &--dark {
+            color: $color-primary-light;
+        }
+    }
+    
+    .hw_hashlink {
+        &--dark, &--light {
+            color: $color-secondary !important;
+        }
+    }
+
+    .hw_navigation {
+        .hw_navlink {
+            color: $color-primary-dark;
+            .hw_svgicon__fill {
+                fill: $color-primary-dark !important;
+            }
+            svg {
+                border-color: $color-primary-dark !important;   
+            }
+        }
+        &--dark .hw_navlink {
+            color: $color-primary-light;
+            .hw_svgicon__fill {
+                fill: $color-primary-light !important;
+            }
+            svg {
+                border-color: $color-primary-light !important;   
+            }
+        }
+    }
+
+    /* Absolute Top Navigation Menu */
+    @media only screen and (max-width: 530px) {
+        .hw_header .hw_navigation {
+            bottom: -40px;
+            justify-content: center;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+    @media only screen and (max-width: 530px) {
+        .hw_main {
+            min-height: calc(100vh - 140px);
+            padding: 40px 20px 20px;
+        }
+    }
+    .hw_logo {
+        &--dark span {
+            color: $color-primary-light !important;
+        }
+        &__secondary {
+            color: $color-secondary !important;
+        }
+        .hw_image {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}
+
+.hw_route {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding-bottom: 65px;
+    padding-top: 20px;
+}
+
+.niteswitch {
+    position: absolute;
+    top: 18px;
+    right: 5px;
+    z-index: 2;
+    transform: scale(0.8);
+}

@@ -1,0 +1,67 @@
+@import "./styles/branding.scss";
+
+// overrides
+.hw_navlink {
+    .hw_svgicon__fill {
+        fill: $color-primary-dark !important;
+    }
+    svg {
+        margin-top: 1px;
+        padding-bottom: 2px;
+        border-width: 2.5px !important;
+        border-color: $color-primary-dark !important;   
+    }
+}
+.hw_navlink--active {
+    color: $color-secondary;
+    .hw_svgicon__fill {
+        fill: $color-secondary !important;
+    }
+    svg {
+        border-color: $color-secondary !important;   
+    }
+}
+.hw_logo__secondary {
+    color: $color-secondary;
+}
+.hw_footer {
+    background-color: $color-secondary;
+    .hw_backtotop__text { color: $color-primary-light !important;}
+    .hw_svg__fill { fill: $color-primary-light; }
+    .hw_copyright p {
+        color: $color-primary-light;
+    }
+    .hw_heading {
+        color: $color-primary-light
+    }
+    @media only screen and (max-width: 744px) {
+        .hw_navigation a { color: $color-primary-dark;}
+    }
+    .hw_navigation a { color: $color-primary-light;}
+}
+.hw_logo {
+    .hw_image {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+    opacity: 0.5;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $color-secondary-faded;
+    border-radius: 2px;
+    opacity: 0.5;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $color-secondary;
+    border-radius: 2px;
+    opacity: 0.5;
+  }
