@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
-import "./styles/responsive_base.scss";
 import "./styles/reset.scss";
 import "./styles/fontfaces.scss";
 import "./index.scss";

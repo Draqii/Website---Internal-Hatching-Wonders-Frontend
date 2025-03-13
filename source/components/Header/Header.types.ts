@@ -1,4 +1,4 @@
-export interface HomeProps  {
+export interface HeaderProps  {
     language?: "english" | "german"
     theme?: "light" | "dark"
     className?: string
