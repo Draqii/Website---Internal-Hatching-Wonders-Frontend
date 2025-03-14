@@ -1,6 +1,6 @@
 import React from "react";
 import { setClass } from "../../modules/setClass";
-import Header from "../Header/Header";
+import Header from "../o_Header/Header";
 import Router from "../_Router/Router";
 import "./App.scss";
 
