@@ -9,8 +9,11 @@ const Header = ({language, theme, className}: HeaderProps) => {
 
     return (
         <div className={setClass("hw_header", [theme], className)}>
-            <NavLink to="/" children="Home"/>
-            <NavLink to="/newsletter" children="Newsletter" />
+            <div className="hw_header__links">
+                <NavLink className={"hw_header__link"} to="/" children="Home"/>
+                <NavLink className={"hw_header__link"} to="/clocking" children="Clocking" />
+                <NavLink className={"hw_header__link"} to="/newsletter" children="Newsletter" />
+            </div>
         </div>
     )
 }

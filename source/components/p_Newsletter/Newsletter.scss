@@ -1,4 +1,28 @@
 .hw_newsletter {
 
+    &__table, &__title {
+        align-self: center;
+        z-index: 2;
+    }
+    
+    &__table {
+        max-width: 1200px;
+        width: 100%;
+        .hw_table__field {
+            max-width: 100px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+        }
+    }
+
+    &__background {
+        position: absolute;
+        right: -40px;
+        bottom: 0px;
+        opacity: 0.9;
+        z-index: 1;
+        height: calc(100vH - 60px - 30px);
+    }
 }
 

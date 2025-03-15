@@ -1,0 +1,12 @@
+.hw_route {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 35px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-x: none;
+    height: calc(100% - 45px - 35px);
+}
