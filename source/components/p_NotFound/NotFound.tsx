@@ -14,7 +14,7 @@ const NotFound = ({language, theme, className}: NotFoundProps) => {
     return (
         <div className={setClass("hw_notfound", [theme], className)}>
             <Heading 
-                className="hw_newsletter__title"
+                className="hw_notfound__title"
                 children={"Page Not Found"}
                 size={"teaser"} 
                 theme={"light"} />

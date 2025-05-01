@@ -1,4 +1,11 @@
 .hw_clocking {
-
+    &__background {
+        position: absolute;
+        right: -40px;
+        bottom: 0px;
+        opacity: 0.9;
+        z-index: 1;
+        height: calc(100vH - 60px - 30px);
+    }
 }
 

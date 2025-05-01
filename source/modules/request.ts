@@ -2,7 +2,7 @@ export const backend_root = (
     process.env.NODE_ENV === "production" ? "https://homepage-backend.onrender.com" : process.env.NODE_ENV === "development"? "http://localhost:3000" :""
 ) 
 
-const options: any = (method, payload) => ({
+const options: any = (method, payload: any) => ({
     method: method,
     mode: 'cors', 
     cache: 'no-cache', 
@@ -10,9 +10,9 @@ const options: any = (method, payload) => ({
     headers: { 'Content-Type': 'application/json' },
     redirect: 'follow', 
     referrerPolicy: 'no-referrer',
-    body: JSON.stringify(payload) });
+    body: JSON.stringify({payload: payload}) });
 
-export const request = (path, method, data=null, callback) => {
+export const request = (path, method, data: any, callback) => {
     let _options = options(method, data)
     if (method === "GET") delete _options.body
     fetch(backend_root + path, _options)

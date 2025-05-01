@@ -6,6 +6,7 @@ import Home from "../p_Home/Home";
 import NotFound from "../p_NotFound/NotFound";
 import Newsletter from "../p_Newsletter/Newsletter";
 import Clocking from "../p_Clocking/Clocking";
+import Employees from "../p_Employees/Employees";
 import "./Router.scss";
 
 const Router = ({ language, theme, className }: RouterProps) => {
@@ -35,6 +36,13 @@ const Router = ({ language, theme, className }: RouterProps) => {
         {
             path: "/clocking", 
             component: <Clocking
+                className={setClass("hw_route", [theme], "")}
+                language={language}
+                theme={theme} />
+        },
+        {
+            path: "/employees", 
+            component: <Employees
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} />

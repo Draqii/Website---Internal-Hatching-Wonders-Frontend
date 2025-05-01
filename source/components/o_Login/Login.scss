@@ -1,0 +1,26 @@
+.hw_login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__options {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    &__options, &__title,  &__textbox {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__background {
+        position: absolute;
+        right: -40px;
+        bottom: 0px;
+        opacity: 0.9;
+        z-index: 1;
+        height: calc(100vH - 60px - 30px);
+    }
+}
+
