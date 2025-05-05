@@ -5,7 +5,7 @@ import { Heading } from "da-awesome-library/build";
 import texts from "./NotFound.json"
 import "./NotFound.scss";
 
-const NotFound = ({language, theme, className}: NotFoundProps) => {
+const NotFound = ({bg, language, theme, className}: NotFoundProps) => {
 
     useEffect(() => {
         document.title = "Page Not Found - Internal Hatching Wonders"

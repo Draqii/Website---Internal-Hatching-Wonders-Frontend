@@ -17,6 +17,12 @@
         gap: 20px;
     }
 
+    &__items {
+        .hw_heading {
+            text-align: left
+        }
+    }
+
     &__background {
         position: absolute;
         right: -40px;
@@ -24,6 +30,10 @@
         opacity: 0.9;
         z-index: 1;
         height: calc(100vH - 60px - 30px);
+    }
+
+    td {
+        width: 110px;
     }
 }
 

@@ -1,0 +1,24 @@
+.hw_settings {
+    max-width: 920px;
+    margin-left: 460px;
+
+    &__teaser {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: auto;
+        .hw_heading, .hw_paragraph {
+            font-weight: 900;
+            text-align: center;
+            max-width: 790px;
+            margin: auto;
+        }
+    }
+    .hw_button {
+        background-color: #FF8CB7;
+        border-radius: 6px;
+    }
+}
+

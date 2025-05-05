@@ -7,5 +7,18 @@
         z-index: 1;
         height: calc(100vH - 60px - 30px);
     }
+    &__content {
+        max-width: 900px;
+        margin: 20px auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+    }
+    &__section {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
 }
 

@@ -1,4 +1,12 @@
 .hw_clocking {
+    &__content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+    }
     &__background {
         position: absolute;
         right: -40px;

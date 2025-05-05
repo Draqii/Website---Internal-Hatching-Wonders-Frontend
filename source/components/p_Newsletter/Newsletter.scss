@@ -1,12 +1,20 @@
 .hw_newsletter {
 
+    &__content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+    }
+
     &__table, &__title {
         align-self: center;
         z-index: 2;
     }
     
     &__table {
-        max-width: 1200px;
         width: 100%;
         .hw_table__field {
             max-width: 100px;
@@ -14,6 +22,11 @@
             overflow-y: hidden;
 
         }
+    }
+
+    &__subtitle {
+        text-align: left;
+        margin-bottom: -40px;
     }
 
     &__background {

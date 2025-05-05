@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { setClass } from "../../modules/setClass";
 import { RouterProps } from "./Router.types";
 import { Routes, Route } from "react-router-dom";
+import useCookie from "../../modules/hooks/useCookie";
 import Home from "../p_Home/Home";
 import NotFound from "../p_NotFound/NotFound";
 import Newsletter from "../p_Newsletter/Newsletter";
 import Clocking from "../p_Clocking/Clocking";
 import Employees from "../p_Employees/Employees";
+import Gears from "../p_Settings/Gears";
 import "./Router.scss";
 
 const Router = ({ language, theme, className }: RouterProps) => {
+
+    const [bg, setBG]: any = useState(useCookie("hw_bg", "default")[0])
 
     const routes = [
         {
             path: "/", 
             component: <Home
+                bg={bg === "custom"}
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} />
@@ -22,6 +27,7 @@ const Router = ({ language, theme, className }: RouterProps) => {
         {
             path: "/newsletter", 
             component: <Newsletter
+                bg={bg === "custom"}
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} />
@@ -29,6 +35,7 @@ const Router = ({ language, theme, className }: RouterProps) => {
         {
             path: "/newsletter", 
             component: <Newsletter
+                bg={bg === "custom"}
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} />
@@ -36,6 +43,7 @@ const Router = ({ language, theme, className }: RouterProps) => {
         {
             path: "/clocking", 
             component: <Clocking
+                bg={bg === "custom"}
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} />
@@ -43,13 +51,23 @@ const Router = ({ language, theme, className }: RouterProps) => {
         {
             path: "/employees", 
             component: <Employees
+                bg={bg === "custom"}
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} />
         },
         {
+            path: "/settings", 
+            component: <Gears
+                className={setClass("hw_route", [theme], "")}
+                language={language}
+                theme={theme} 
+                setBG={setBG} />
+        },
+        {
             path: "/*", 
             component: <NotFound
+                bg={bg === "custom"}
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} />

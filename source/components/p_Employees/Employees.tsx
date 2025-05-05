@@ -8,7 +8,7 @@ import img_employees from "../../../public/images/employees.png"
 import texts from "./Employees.json"
 import "./Employees.scss";
 
-const Employees = ({ language, theme, className }: EmployeesProps) => {
+const Employees = ({ bg, language, theme, className }: EmployeesProps) => {
 
     const [employees, setEmployees] = useState([])
 
@@ -26,21 +26,21 @@ const Employees = ({ language, theme, className }: EmployeesProps) => {
     }
 
     const _submitAnyForm = () => {
-        if(form.show === "add") _submitRegisterForm()
-        if(form.show === "update") _submitUpdateForm()
-        if(form.show === "delete") _submitDeleteForm()
+        if (form.show === "add") _submitRegisterForm()
+        if (form.show === "update") _submitUpdateForm()
+        if (form.show === "delete") _submitDeleteForm()
     }
 
     const _submitRegisterForm = () => {
-        submitForm("/employees/register", {email: form.email, password: form.password, name: form.name, role: form.role}, form, setForm, {})
+        submitForm("/employees/register", { email: form.email, password: form.password, name: form.name, role: form.role }, form, setForm, {})
     }
 
     const _submitUpdateForm = () => {
-        submitForm("/employees/update", {email: form.email, password: form.password, name: form.name, role: form.role}, form, setForm, {})
+        submitForm("/employees/update", { email: form.email, password: form.password, name: form.name, role: form.role }, form, setForm, {})
     }
 
     const _submitDeleteForm = () => {
-        submitForm("/employees/delete", {email: form.email, password: form.password, name: form.name, role: form.role}, form, setForm, {})
+        submitForm("/employees/delete", { email: form.email, password: form.password, name: form.name, role: form.role }, form, setForm, {})
     }
 
     useEffect(() => {
@@ -53,16 +53,16 @@ const Employees = ({ language, theme, className }: EmployeesProps) => {
             <div className="hw_employees__content">
                 <Heading
                     className="hw_employees__title"
-                    children={"Employees"}
+                    children={"Employees Page"}
                     size={"teaser"}
                     theme={"light"} />
 
                 {form.show === "add" ? <section>
                     <Heading
-                    className="hw_employees__title"
-                    children={"Add Employee"}
-                    size={"xlarge"}
-                    theme={"light"} />
+                        className="hw_employees__title"
+                        children={"Add Employee"}
+                        size={"xlarge"}
+                        theme={"light"} />
                     <Textbox
                         className="hw_employees__textbox"
                         value={form.name}
@@ -91,35 +91,45 @@ const Employees = ({ language, theme, className }: EmployeesProps) => {
                 </section> : null}
 
 
-                {form.show === "none" ? <Button 
-                    children={"Add Employee"} 
-                    isPrimary={false} 
-                    theme={"light"} 
+                {form.show === "none" ? <Button
+                    children={"Add Employee"}
+                    isPrimary={false}
+                    theme={"light"}
                     onClick={() => changeForm(form, "show", "add", (_form) => setForm(_form))} /> : form.show === "add" ? <div className="hw_employees__options">
-                    <Button 
-                        children={"Save Changes"} 
-                        isPrimary={false} 
-                        theme={"light"} 
-                        onClick={() => _submitAnyForm()} />
-                    <Button 
-                        children={"Abort Changes"} 
-                        isPrimary={false} 
-                        theme={"light"} 
-                        onClick={() => abortEditing()} />
-                </div> : null}
+                        <Button
+                            children={"Save Changes"}
+                            isPrimary={false}
+                            theme={"light"}
+                            onClick={() => _submitAnyForm()} />
+                        <Button
+                            children={"Abort Changes"}
+                            isPrimary={false}
+                            theme={"light"}
+                            onClick={() => abortEditing()} />
+                    </div> : null}
 
                 <div className="hw_employees__items">
-                    {employees.map((employee, employee_id) => <div className="hw_employees__item">
+
+                    <br/>
+                    <Heading
+                        className="hw_employees__title"
+                        children={"All Employees"}
+                        size={"xlarge"}
+                        theme={"light"} />
+                    <br/>
+                    <br/>
+
+                    <div className="hw_employees__item">
                         <Table data={{
-                            headings: ["Name", "Role", "Email", "Password"],
-                            rows: [
-                                {columns: [employee.name, employee.role, employee.email, "No Display"]}
-                            ]
+                            headings: ["Entry", "Name", "Role", "Email", "Password"],
+                            rows: employees.map((employee, employee_id) => ({
+                                columns: [(employee_id + 1), employee.name, employee.role, employee.email, "No Display"]
+                            }))
                         }} theme={"light"} />
-                    </div>)}
+                    </div>
                 </div>
             </div>
-            <Image className="hw_employees__background" src={img_employees} alt={"cannnot load image"} theme={"light"} />
+            {!bg ? null : <Image className="hw_employees__background" src={img_employees} alt={"cannnot load image"} theme={"light"} />}
         </div>
     )
 }

@@ -5,6 +5,7 @@ import { setClass } from "../../modules/setClass";
 import { LoginProps } from "./Login.types";
 import { changeForm, submitForm } from "../../modules/form";
 import { Heading, Textbox, Button, Image } from "da-awesome-library/build";
+import { setItem } from "../../modules/hooks/useCookie";
 import login from "../../../public/images/login.png"
 import texts from "./Login.json"
 import "./Login.scss";
@@ -28,6 +29,7 @@ const Login = ({ loggedIn, setLoggedIn, language, theme, className }: LoginProps
             if (response.status === "success") {
                 navigate("/")
                 setLoggedIn(response.payload.id)
+                setItem("hw_login", response.payload.id, 1)
             }
         })
     }

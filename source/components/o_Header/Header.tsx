@@ -15,6 +15,7 @@ const Header = ({loggedIn, language, theme, className}: HeaderProps) => {
                 <NavLink className={"hw_header__link"} to="/clocking" children="Clocking" />
                 <NavLink className={"hw_header__link"} to="/employees" children="Employees" />
                 <NavLink className={"hw_header__link"} to="/newsletter" children="Newsletter" />
+                <NavLink className={"hw_header__link"} to="/settings" children="Settings" />
             </div> : <Paragraph className="hw_header__text" size={"small"} children={"You must be logged in to use this website!"} theme={"dark"} />}
         </div>
     )
