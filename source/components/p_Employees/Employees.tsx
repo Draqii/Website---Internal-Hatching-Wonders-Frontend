@@ -91,17 +91,17 @@ const Employees = ({ bg, language, theme, className }: EmployeesProps) => {
                 </section> : null}
 
 
-                {form.show === "none" ? <Button
+                {form.show === "none" ? <Button isEnabled={true}
                     children={"Add Employee"}
                     isPrimary={false}
                     theme={"light"}
                     onClick={() => changeForm(form, "show", "add", (_form) => setForm(_form))} /> : form.show === "add" ? <div className="hw_employees__options">
-                        <Button
+                        <Button isEnabled={true}
                             children={"Save Changes"}
                             isPrimary={false}
                             theme={"light"}
                             onClick={() => _submitAnyForm()} />
-                        <Button
+                        <Button isEnabled={true}
                             children={"Abort Changes"}
                             isPrimary={false}
                             theme={"light"}

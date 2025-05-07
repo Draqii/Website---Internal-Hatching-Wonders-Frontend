@@ -34,7 +34,7 @@ const Clocking = ({bg, language, theme, className }: ClockingProps) => {
                     children={"Clocking System"}
                     size={"teaser"}
                     theme={"light"} />
-                <Button
+                <Button isEnabled={true}
                     children={"Save Changes"}
                     isPrimary={false}
                     theme={"light"}

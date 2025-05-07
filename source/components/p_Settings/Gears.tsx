@@ -29,9 +29,9 @@ const Gears = ({ setBG, language, theme, className }: GearsProps) => {
                 <Paragraph size={"large"} theme={"light"}>Hai! There are a few things you can customize on this website. Choose whatever you like if you feel like it!</Paragraph>
             </section>
             <section className="hw_settings__teaser">
-                <Checkbox checked={bg === "default"} children={"Safe For Work Mode (No NSFW)"} onChange={() => updateTheme()} theme={"light"} hasSecondaryTextColor={false} />
+                <Checkbox checked={bg === "default"} children={"Public Mode"} onChange={() => updateTheme()} theme={"light"} hasSecondaryTextColor={false} />
             </section>
-            <Button children={"Back To Home"} isPrimary={false} theme={"light"} onClick={() => navigate("/")} />
+            <Button isEnabled={true} children={"Back To Home"} isPrimary={false} theme={"light"} onClick={() => navigate("/")} />
         </div>
     )
 }

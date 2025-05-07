@@ -57,18 +57,18 @@ const Login = ({ loggedIn, setLoggedIn, language, theme, className }: LoginProps
 
 
             <div className="hw_login__options">
-                <Button
+                <Button isEnabled={true}
                     children={"Save Changes"}
                     isPrimary={false}
                     theme={"light"}
                     onClick={() => _submitLoginForm()} />
-                <Button
+                <Button isEnabled={true}
                     children={"Abort Changes"}
                     isPrimary={false}
                     theme={"light"}
                     onClick={() => abortEditing()} />
             </div> :
-            <Image className="hw_login__background" src={login} alt={"cannnot load image"} theme={"light"} />
+           {/*<Image className="hw_login__background" src={login} alt={"cannnot load image"} theme={"light"} />*/}
         </div>
     )
 }
