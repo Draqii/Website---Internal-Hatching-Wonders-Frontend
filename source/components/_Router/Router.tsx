@@ -11,9 +11,7 @@ import Employees from "../p_Employees/Employees";
 import Gears from "../p_Settings/Gears";
 import "./Router.scss";
 
-const Router = ({ language, theme, className }: RouterProps) => {
-
-    const [bg, setBG]: any = useState(useCookie("hw_bg", "default")[0])
+const Router = ({bg, setBg, language, theme, className }: RouterProps) => {
 
     const routes = [
         {
@@ -62,7 +60,7 @@ const Router = ({ language, theme, className }: RouterProps) => {
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} 
-                setBG={setBG} />
+                setBG={setBg} />
         },
         {
             path: "/*", 

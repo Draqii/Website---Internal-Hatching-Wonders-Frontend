@@ -28,17 +28,36 @@ const Clocking = ({bg, language, theme, className }: ClockingProps) => {
 
     return (
         <div className={setClass("hw_clocking", [theme], className)}>
+            
             <div className="hw_clocking__content">
                 <Heading
                     className="hw_clocking__title"
                     children={"Clocking System"}
                     size={"teaser"}
                     theme={"light"} />
-                <Button isEnabled={true}
-                    children={"Save Changes"}
-                    isPrimary={false}
-                    theme={"light"}
-                    onClick={() => submitClocking()} />
+
+                <div className="hw_employees__flex">
+                    <div>
+                        <Heading
+                            className="hw_employees__title"
+                            children={"What This Page Is For"}
+                            size={"xlarge"}
+                            theme={"light"} />
+                        <Paragraph size={"medium"} theme={"light"}>Please use this system to clock in whenever you start working, and to clock out whenever you're done with it ^^ you also need to log what you worked on alongside it pleaseee.</Paragraph>
+                    </div>
+                    <div>
+                        <Heading
+                            className="hw_employees__title"
+                            children={"Your Options"}
+                            size={"xlarge"}
+                            theme={"light"} />
+                        <Button isEnabled={true}
+                            children={"Add New Clocking"}
+                            isPrimary={false}
+                            theme={"light"}
+                            onClick={() => submitClocking()} />
+                    </div>
+                </div>
 
                 {clockings.length > 0 ? <div className="hw_clocking__clockings">
                     <div>

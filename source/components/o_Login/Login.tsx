@@ -10,7 +10,7 @@ import login from "../../../public/images/login.png"
 import texts from "./Login.json"
 import "./Login.scss";
 
-const Login = ({ loggedIn, setLoggedIn, language, theme, className }: LoginProps) => {
+const Login = ({ bg, loggedIn, setLoggedIn, language, theme, className }: LoginProps) => {
 
     const navigate = useNavigate()
 
@@ -68,7 +68,7 @@ const Login = ({ loggedIn, setLoggedIn, language, theme, className }: LoginProps
                     theme={"light"}
                     onClick={() => abortEditing()} />
             </div> :
-           {/*<Image className="hw_login__background" src={login} alt={"cannnot load image"} theme={"light"} />*/}
+           {!bg ? null : <Image className="hw_login__background" src={login} alt={"cannnot load image"} theme={"light"} />}
         </div>
     )
 }

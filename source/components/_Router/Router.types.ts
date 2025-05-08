@@ -1,4 +1,6 @@
 export interface RouterProps  {
+    setBg,
+    bg,
     cookieConsent
     onConsentChange
     language?: "german" | "english"

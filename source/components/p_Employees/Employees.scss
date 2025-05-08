@@ -11,6 +11,22 @@
         align-self: center;
     }
 
+    &__flex {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        p, .hw_button {
+            width: 500px;
+            line-height: 1.3rem;
+        }
+    }
+
     &__options {
         display: flex;
         flex-direction: row;

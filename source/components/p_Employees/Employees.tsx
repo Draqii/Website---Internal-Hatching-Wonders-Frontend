@@ -90,8 +90,22 @@ const Employees = ({ bg, language, theme, className }: EmployeesProps) => {
                         placeholder={"Employee Password"} />
                 </section> : null}
 
-
-                {form.show === "none" ? <Button isEnabled={true}
+                <div className="hw_employees__flex">
+                    <div>
+                    <Heading
+                        className="hw_employees__title"
+                        children={"What This Page Is For"}
+                        size={"xlarge"}
+                        theme={"light"} />
+                    <Paragraph size={"medium"} theme={"light"}>This page is dedicated to finding and managing personal details off employees of hatching wonders in relation to their work. Partners not part of Hatching Wonders might be here aswell.</Paragraph>
+                    </div>
+                    <div>
+                    <Heading
+                        className="hw_employees__title"
+                        children={"Admin Options"}
+                        size={"xlarge"}
+                        theme={"light"} />
+                    {form.show === "none" ? <Button isEnabled={true}
                     children={"Add Employee"}
                     isPrimary={false}
                     theme={"light"}
@@ -107,7 +121,16 @@ const Employees = ({ bg, language, theme, className }: EmployeesProps) => {
                             theme={"light"}
                             onClick={() => abortEditing()} />
                     </div> : null}
+                    <Button isEnabled={true}
+                    children={"Edit Employee"}
+                    isPrimary={false}
+                    theme={"light"}
+                    onClick={() => changeForm(form, "show", "add", (_form) => setForm(_form))} />
+                    </div>
+                
+                    </div>
 
+                    
                 <div className="hw_employees__items">
 
                     <br/>
