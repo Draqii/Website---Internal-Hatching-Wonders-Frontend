@@ -39,6 +39,18 @@ const Home = ({bg, language, theme, className}: HomeProps) => {
                         size={"medium"} 
                         theme={"light"} />
                 </section>
+                <section className="hw_home__section">
+                    <Heading 
+                        className="hw_home__title"
+                        children={"The Project Manager"}
+                        size={"large"} 
+                        theme={"light"} />
+                    <Paragraph 
+                        className="hw_home__text"
+                        children={"This system is there to manage details of projects. Please use it to see which projects and tasks you're asigned to, and connect your working hours to tasks."}
+                        size={"medium"} 
+                        theme={"light"} />
+                </section>
             </div>
             {!bg?null:<Image className="hw_home__background" src={img_welcome} alt={"cannnot load image"} theme={"light"} />}
         </div>

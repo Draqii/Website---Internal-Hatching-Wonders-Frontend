@@ -15,7 +15,6 @@ const Projects = ({ bg, language, theme, className }: ProjectsProps) => {
     const [loggedIn, setLoggedIn] = useState(useCookie("hw_login", "default")[0])
     const [initialForm, setInitialForm] = useState({
             show: "none",
-            email: "",
             name: ""
         })
     const [form, setForm] = useState(initialForm)
