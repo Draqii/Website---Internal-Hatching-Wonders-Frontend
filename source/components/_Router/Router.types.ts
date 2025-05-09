@@ -1,4 +1,6 @@
 export interface RouterProps  {
+    setTimezone,
+    timezone
     setBg,
     bg,
     cookieConsent

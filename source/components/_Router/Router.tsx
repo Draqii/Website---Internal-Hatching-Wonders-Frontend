@@ -8,10 +8,11 @@ import NotFound from "../p_NotFound/NotFound";
 import Newsletter from "../p_Newsletter/Newsletter";
 import Clocking from "../p_Clocking/Clocking";
 import Employees from "../p_Employees/Employees";
+import Projects from "../p_Projects/Projects";
 import Gears from "../p_Settings/Gears";
 import "./Router.scss";
 
-const Router = ({bg, setBg, language, theme, className }: RouterProps) => {
+const Router = ({timezone, setTimezone, bg, setBg, language, theme, className }: RouterProps) => {
 
     const routes = [
         {
@@ -55,11 +56,20 @@ const Router = ({bg, setBg, language, theme, className }: RouterProps) => {
                 theme={theme} />
         },
         {
+            path: "/projects", 
+            component: <Projects
+                bg={bg === "custom"}
+                className={setClass("hw_route", [theme], "")}
+                language={language}
+                theme={theme} />
+        },
+        {
             path: "/settings", 
             component: <Gears
                 className={setClass("hw_route", [theme], "")}
                 language={language}
                 theme={theme} 
+                setTimezone={setTimezone}
                 setBG={setBg} />
         },
         {

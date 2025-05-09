@@ -16,6 +16,11 @@
             margin: auto;
         }
     }
+    .hw_checkbox {
+        flex-direction: row-reverse;
+        align-self: baseline;
+        margin-left: 0;
+    }
     .hw_button {
         background-color: #FF8CB7;
         border-radius: 6px;

@@ -21,7 +21,7 @@ const Clocking = ({bg, language, theme, className }: ClockingProps) => {
     }, [])
 
     const submitClocking = () => {
-        request("/clockings/add", "POST", {}, (response) => {
+        request("/clockings/add", "POST", ({employee_id: loggedIn}), (response) => {
             if (response.status === "success") setClockings(response.payload.clockings)
         })
     }

@@ -3,24 +3,34 @@ import { setClass } from "../../modules/setClass";
 import { GearsProps } from "./Gears.types";
 import texts from "./Gears.json"
 import "./Gears.scss";
-import { Checkbox, Heading, Paragraph, Button } from "da-awesome-library/build";
+import { Checkbox, Heading, Paragraph, Button, Textbox, DropDown } from "da-awesome-library/build";
 import useCookie, { setItem } from "../../modules/hooks/useCookie";
 import { useNavigate } from "react-router-dom";
 
-const Gears = ({ setBG, language, theme, className }: GearsProps) => {
+const Gears = ({setTimezone, setBG, language, theme, className }: GearsProps) => {
 
     const navigate = useNavigate()
 
     const [bg, _setBG]: any = useState(useCookie("hw_bg", "default")[0])
+    const [timezone, _setTimezone]: any = useState(useCookie("hw_timezone", "optionA")[0])
 
     const updateTheme = () => {
         setItem("hw_bg", bg === "custom" ? "default" : "custom", 360)
         _setBG(bg === "custom" ? "default" : "custom")
     }
 
+    const updateTimezone = (timezone) => {
+        setItem("hw_timezone", timezone, 360)
+        _setTimezone(timezone)
+    }
+
     useEffect(() => {
         setBG(bg)
     }, [bg])
+
+    useEffect(() => {
+        setTimezone(timezone)
+    }, [timezone])
 
     return (
         <div className="hw_settings">
@@ -30,6 +40,7 @@ const Gears = ({ setBG, language, theme, className }: GearsProps) => {
             </section>
             <section className="hw_settings__teaser">
                 <Checkbox checked={bg === "default"} children={"Public Mode"} onChange={() => updateTheme()} theme={"light"} hasSecondaryTextColor={false} />
+                <DropDown onChange={(_timezone) => updateTimezone(_timezone)} value={timezone} label={"Timezone"} options={["Greenwich Mean Time", "German Time"]} />
             </section>
             <Button isEnabled={true} children={"Back To Home"} isPrimary={false} theme={"light"} onClick={() => navigate("/")} />
         </div>
